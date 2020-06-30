@@ -1,5 +1,14 @@
 from django.shortcuts import render
 
+from .models import *
+
+from .forms import *
+
 # Create your views here.
-def  index(request):
-    return render(request, 'tasks/list.html')
+
+
+def index(request):
+    tasks = Task.objects.all()
+    form = TaskForm()
+    context = {'tasks': tasks, 'forms': form}
+    return render(request, 'tasks/list.html', context)

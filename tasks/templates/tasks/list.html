@@ -1,1 +1,10 @@
-<h1>Lists</h1>
+<h1>Todo</h1>
+<form action="">
+    {{forms}}
+    <input type="submit" name='Create Task'>
+</form>
+{% for task in tasks %}
+<div>
+    <p>{{task}}</p>
+</div>
+{% endfor %}
